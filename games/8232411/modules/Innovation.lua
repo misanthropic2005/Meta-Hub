@@ -125,4 +125,66 @@ function Innovation_Module.touchbaton(player)
    Innovation_Cldwnn.touching = false
 end
 
+function Innovation_Module.setgauntlet(bool)
+   
+   local Gauntlet = function()
+      if workspace:FindFirstChild('GreatGauntlet') then
+         return workspace.GreatGauntlet.Rings
+      else
+         return false
+      end
+   end
+ 
+   local OGS = {
+    Vector3.new(2, 1, 6),
+    Vector3.new(6, 1, 6)
+   }
+ 
+   if bool then
+  
+      local GAU = Gauntlet()
+  
+      if GAU ~= false then
+         for z, x in pairs(GAU:GetDescendants()) do
+            if x:IsA("Part") then
+      
+               local PartSize = x.Size
+      
+               if table.find(OGS, PartSize) then
+                  x.Size = OGS[2]
+               end
+            end
+         end
+   
+         Notify('gauntlet state', 'complete: ' .. tostring(bool), nil)
+      else
+         Notify('gauntlet state', 'could not be found!', nil)
+      end
+  
+   elseif not bool then
+      
+      local GAU = Gauntlet()
+  
+      if GAU ~= false then
+         for z, x in pairs(GAU:GetDescendants()) do
+            if x:IsA("Part") then
+      
+               local PartSize = x.Size
+      
+               if table.find(OGS, PartSize) then
+                  x.Size = OGS[1]
+               end
+            end
+         end
+   
+         Notify('gauntlet state', 'complete: ' .. tostring(bool), nil)         
+      else
+         Notify('gauntlet state', 'could not be found!', nil)
+      end
+  
+   else
+      Notify('gauntlet state', 'failed!', nil)
+   end
+end
+
 return Innovation_Module
