@@ -9,7 +9,7 @@ local Innovation_Notify = function(Title, String, Time)
       Time = 2
    end
   
-   game:GetService("StarterGui"):SetCore("SendNotification",{
+   game:GetService('StarterGui'):SetCore('SendNotification',{
       Title = Title,
       Text = String,
       Duration = Time
@@ -22,7 +22,7 @@ function Innovation_Module.Innovation_Notify(Title, String, Time)
       Time = 2
    end
   
-   game:GetService("StarterGui"):SetCore("SendNotification",{
+   game:GetService('StarterGui'):SetCore('SendNotification',{
       Title = Title,
       Text = String,
       Duration = Time
@@ -95,8 +95,8 @@ function Innovation_Module.touchbaton(player)
    local LocalPart;
   
    if player.Character then
-      if player.Character:FindFirstChild("HumanoidRootPart") then
-         LocalPlayer = player.Character.HumanoidRootPart
+      if player.Character:FindFirstChild('HumanoidRootPart') then
+         LocalPart = player.Character.HumanoidRootPart
       end
    end
   
