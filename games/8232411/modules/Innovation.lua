@@ -156,9 +156,9 @@ function Innovation_Module.setgauntlet(bool)
             end
          end
    
-         Notify('gauntlet state', 'complete: ' .. tostring(bool), nil)
+         Innovation_Notify('gauntlet state', 'complete: ' .. tostring(bool), nil)
       else
-         Notify('gauntlet state', 'could not be found!', nil)
+         Innovation_Notify('gauntlet state', 'could not be found!', nil)
       end
   
    elseif not bool then
@@ -177,13 +177,13 @@ function Innovation_Module.setgauntlet(bool)
             end
          end
    
-         Notify('gauntlet state', 'complete: ' .. tostring(bool), nil)         
+         Innovation_Notify('gauntlet state', 'complete: ' .. tostring(bool), nil)         
       else
-         Notify('gauntlet state', 'could not be found!', nil)
+         Innovation_Notify('gauntlet state', 'could not be found!', nil)
       end
   
    else
-      Notify('gauntlet state', 'failed!', nil)
+      Innovation_Notify('gauntlet state', 'failed!', nil)
    end
 end
 
