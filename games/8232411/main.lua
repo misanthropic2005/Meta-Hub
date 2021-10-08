@@ -110,6 +110,28 @@ end)
 
 --// misc setup
 
+local misc_walkspeed = mainserver_misc:Slider('Walkspeed', 16, 20, 16, function(num)
+    if game.Players.LocalPlayer.Character then
+       
+       local Character = game.Players.LocalPlayer.Character
+     
+       if Character:FindFirstChild("Humanoid") then          
+          Character.Humanoid.WalkSpeed = num
+       end
+    end
+end)
+
+local misc_jumppower = mainserver_misc:Slider('Jumppower', 50, 60, 50, function(num)
+    if game.Players.LocalPlayer.Character then
+       
+       local Character = game.Players.LocalPlayer.Character
+     
+       if Character:FindFirstChild("Humanoid") then          
+          Character.Humanoid.Jumppower = num
+       end
+    end
+end)
+ 
 local misc_gauntlet = mainserver_misc:Toggle('Huge Gauntlet', false, function(state)
     gamemodules.setgauntlet(state)
 end)
