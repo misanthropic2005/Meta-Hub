@@ -33,7 +33,7 @@ discordlibrary = discordlibrary()
 
 --// window setup
 
-local mainwindow = discordlibrary:Window('Meta Hub')
+local mainwindow = discordlibrary:Window('Meta Hub - Innovation Security Training')
 
 --// server setup
 
