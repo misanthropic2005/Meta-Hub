@@ -122,14 +122,14 @@ function Innovation_Module.touchbaton(player)
      
       if touchsuccess and batonwasfound then
           Innovation_Cldwnn.touching = false
-          Notify('baton touch', 'successfully touched the baton.', nil)
+          Innovation_Notify('baton touch', 'successfully touched the baton.', nil)
           return
       elseif not batonwasfound then
           Innovation_Cldwnn.touching = false
-          Notify('baton touch', 'no baton found!', nil)   
+          Innovation_Notify('baton touch', 'no baton found!', nil)   
       else
           Innovation_Cldwnn.touching = false
-          Notify('baton touch', 'error', nil)
+          Innovation_Notify('baton touch', 'error', nil)
           return
       end
     
