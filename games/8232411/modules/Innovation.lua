@@ -16,6 +16,19 @@ local Innovation_Notify = function(Title, String, Time)
    })
 end
 
+function Innovation_Module.Innovation_Notify(Title, String, Time)
+   
+   if Time == nil or Time == 0 or Time < 1 then
+      Time = 2
+   end
+  
+   game:GetService("StarterGui"):SetCore("SendNotification",{
+      Title = Title,
+      Text = String,
+      Duration = Time
+   })
+end
+
 function Innovation_Module.fireat(player, target)  
   
    if Innovation_Cldwnn.firing then return end
