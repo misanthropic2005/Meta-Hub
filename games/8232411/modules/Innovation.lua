@@ -124,3 +124,5 @@ function Innovation_Module.touchbaton(player)
   
    Innovation_Cldwnn.touching = false
 end
+
+return Innovation_Module
