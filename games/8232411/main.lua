@@ -77,6 +77,16 @@ local msa_ign = mainserver_aimlock:Toggle('Ignore Team', aimlockui['TeamCheck'],
     )
 end)
 
+local msa_vis = mainserver_aimlock:Toggle('Visible Check', aimlockui['VisibleCheck'], function(state)
+    aimlockui['VisibleCheck'] = state
+    
+    gamemodules.Innovation_Notify(
+     'visible check',
+     tostring(state),
+     1
+    )  
+end
+
 local msa_aimlock_select = mainserver_aimlock:Bind('Target Bind', aimlock_settings['Key'], function()
     aimlockui.getClosestPlayerToCursor(); 
     
