@@ -20,6 +20,7 @@ local gamemodules = loadstring(
 aimlockui['FOV'] = 35;
 aimlockui['FOVRGB'] = aimlock_settings['FOVColor'];
 aimlockui['TeamCheck'] = true;
+aimlockui['VisibleCheck'] = false;
 
 --// library setup
 if game:HttpGet(discordlibrary) then
