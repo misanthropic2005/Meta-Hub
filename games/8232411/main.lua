@@ -26,7 +26,7 @@ if game:HttpGet(discordlibrary) then
    discordlibrary = game:HttpGet(discordlibrary)
    discordlibrary = loadstring(discordlibrary)
 else
-   game:GetService('Players').LocalPlayer:Kick('Initation failed!')
+   game:GetService('Players').LocalPlayer:Kick('Initiation failed!')
 end
 
 discordlibrary = discordlibrary()
