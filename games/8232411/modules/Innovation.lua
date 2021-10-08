@@ -102,14 +102,31 @@ function Innovation_Module.touchbaton(player)
   
    if LocalPart ~= nil then
       
+      local batonwasfound = false
+  
       local touchsuccess, toucherror = pcall(function()
-          
+           for z, x in pairs(game.Players:GetPlayers()) do
+             if x.Character then
+                if x.Character:FindFirstChild("TeamBaton") then
+                   local Tool = x.Character:FindFirstChild("TeamBaton") 
+
+                   if Tool:FindFirstChild("Handle") then
+                      firetouchinterest(Tool:FindFirstChild("Handle"), LocalPart, 0)
+                      firetouchinterest(Tool:FindFirstChild("Handle"), LocalPart, 1)
+                      batonwasfound = true
+                   end
+                end
+             end
+          end
       end)
      
-      if touchsuccess then
+      if touchsuccess and batonwasfound then
           Innovation_Cldwnn.touching = false
           Notify('baton touch', 'successfully touched the baton.', nil)
           return
+      elseif not batonwasfound then
+          Innovation_Cldwnn.touching = false
+          Notify('baton touch', 'no baton found!', nil)   
       else
           Innovation_Cldwnn.touching = false
           Notify('baton touch', 'error', nil)
