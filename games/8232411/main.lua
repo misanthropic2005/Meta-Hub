@@ -85,7 +85,7 @@ local msa_vis = mainserver_aimlock:Toggle('Visible Check', aimlockui['VisibleChe
      tostring(state),
      1
     )  
-end
+end)
 
 local msa_aimlock_select = mainserver_aimlock:Bind('Target Bind', aimlock_settings['Key'], function()
     aimlockui.getClosestPlayerToCursor(); 
@@ -136,6 +136,10 @@ local misc_gauntlet = mainserver_misc:Toggle('Huge Gauntlet', false, function(st
     gamemodules.setgauntlet(state)
 end)
 
-local misc_baton_touch = mainserver_misc:Button('touch baton', function()
+local misc_baton_touch = mainserver_misc:Button('Touch Baton', function()
     gamemodules.touchbaton(game.Players.LocalPlayer)
+end)
+
+local misc_server_rejoin = mainserver_misc:Button('Rejoin', function()
+    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
 end)
