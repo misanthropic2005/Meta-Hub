@@ -127,7 +127,7 @@ local misc_jumppower = mainserver_misc:Slider('Jumppower', 50, 60, 50, function(
        local Character = game.Players.LocalPlayer.Character
      
        if Character:FindFirstChild("Humanoid") then          
-          Character.Humanoid.Jumppower = num
+          Character.Humanoid.JumpPower = num
        end
     end
 end)
